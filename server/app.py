@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from environment import reset, step
+from server .environment import reset, step
 
 app = FastAPI()
 

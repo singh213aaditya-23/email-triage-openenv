@@ -1,4 +1,4 @@
-from grader import grade_easy, grade_medium, grade_hard
+from server .grader import grade_easy, grade_medium, grade_hard
 
 state = {}
 
