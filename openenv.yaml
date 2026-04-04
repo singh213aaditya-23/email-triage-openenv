@@ -1,5 +1,8 @@
 name: email-triage-env
 
+entrypoint:
+  module: server.app
+
 tasks:
   - name: easy
     grader: grade_easy
