@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from server .environment import reset, step
+from email_triage_env.server.environment import reset, step
 
 app = FastAPI()
 

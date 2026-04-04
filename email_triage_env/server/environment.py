@@ -1,4 +1,4 @@
-from server .grader import grade_easy, grade_medium, grade_hard
+from email_triage_env.server.grader import grade_easy, grade_medium, grade_hard
 
 state = {}
 
