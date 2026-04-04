@@ -1,21 +1,10 @@
-from email_triage_env.server.grader import grade_easy, grade_medium, grade_hard
+from server.grader import grade_easy
 
-state = {}
+state = {"email": "Test email", "true": {"type": "spam"}}
 
 def reset():
-    global state
-    state = {
-        "email": "Reset your password urgently.",
-        "true": {"type": "security", "priority": "high", "route": "security_team"}
-    }
     return state
 
-
 def step(action):
-    true = state["true"]
-
-    return {
-        "easy": grade_easy(action, true),
-        "medium": grade_medium(action, true),
-        "hard": grade_hard(action, true),
-    }
+    reward = grade_easy(action, state["true"])
+    return {"reward": reward, "done": True}

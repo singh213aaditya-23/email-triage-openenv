@@ -1,6 +1,5 @@
 name: email-triage-env
 
 tasks:
-  - easy_classification
-  - medium_classification_priority
-  - hard_full_pipeline
+  - name: easy
+    grader: grade_easy

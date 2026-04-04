@@ -1,11 +1,7 @@
 from fastapi import FastAPI
-from email_triage_env.server.environment import reset, step
+from server.environment import reset, step
 
 app = FastAPI()
-
-@app.get("/")
-def home():
-    return {"message": "Email Triage API is running 🚀"}
 
 @app.post("/reset")
 def reset_env():

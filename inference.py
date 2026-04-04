@@ -1,15 +1,12 @@
 import requests
+import os
 
-BASE_URL = "http://localhost:8000"
+BASE = os.getenv("API_BASE_URL")
 
-requests.post(f"{BASE_URL}/reset")
+r = requests.post(f"{BASE}/reset")
+state = r.json()
 
-action = {
-    "type": "security",
-    "priority": "high",
-    "route": "security_team"
-}
+action = {"type": "spam"}
 
-result = requests.post(f"{BASE_URL}/step", json=action).json()
-
-print(result)
+r = requests.post(f"{BASE}/step", json=action)
+print(r.json())
